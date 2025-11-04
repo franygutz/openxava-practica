@@ -1,4 +1,8 @@
-/*C4*/SET SCHEMA PUBLIC
-DISCONNECT
 /*C5*/SET SCHEMA PUBLIC
-create table Producto (numero integer not null, descripcion varchar(50), primary key (numero))
+DISCONNECT
+/*C6*/SET SCHEMA PUBLIC
+INSERT INTO CLIENTE VALUES(1,'Marlon Gutierrez',0,'','','San Rafael del Sur')
+COMMIT
+DELETE FROM CLIENTE WHERE NUMERO=1
+INSERT INTO CLIENTE VALUES(1,'Marlon Gutierrez',16400,'San Rafael del Sur','Managua','San Rafael del Sur')
+COMMIT
