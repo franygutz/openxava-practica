@@ -1,13 +1,10 @@
 /*C4*/SET SCHEMA PUBLIC
 DISCONNECT
 /*C5*/SET SCHEMA PUBLIC
-create table Factura (oid varchar(32) not null, anyo integer, fecha date, numero integer, observaciones varchar(255), cliente_numero integer not null, primary key (oid))
-create table Factura_detalles (Factura_oid varchar(32) not null, cantidad integer not null, producto_numero integer)
-/*C6*/SET SCHEMA PUBLIC
-alter table Factura add constraint FKmd10sg74xw8mq3d2m9k2kxual foreign key (cliente_numero) references Cliente
-alter table Factura_detalles add constraint FKe3f314u9v7uw8aktwkjo8473t foreign key (producto_numero) references Producto
-alter table Factura_detalles add constraint FKpl16p1cpo7r84s75asx5db9nq foreign key (Factura_oid) references Factura
-INSERT INTO FACTURA VALUES('8ac826879a4c4871019a4c4908150000',2025,'2025-11-03',1,'',1)
-INSERT INTO FACTURA_DETALLES VALUES('8ac826879a4c4871019a4c4908150000',20,1)
-INSERT INTO FACTURA_DETALLES VALUES('8ac826879a4c4871019a4c4908150000',2,1)
+INSERT INTO FACTURA VALUES('402881959a51f755019a51f7975a0000',2025,'2025-11-04',2,'',2)
+COMMIT
+DELETE FROM FACTURA WHERE OID='402881959a51f755019a51f7975a0000'
+COMMIT
+INSERT INTO FACTURA VALUES('402881959a51f755019a51f828060001',2025,'2025-11-04',2,'',2)
+INSERT INTO FACTURA_DETALLES VALUES('402881959a51f755019a51f828060001',0,1)
 COMMIT
